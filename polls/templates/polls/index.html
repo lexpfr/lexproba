@@ -3,11 +3,18 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
 {% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
+    <table>
+     <th>ID</th>
+     <th>Дата публикации</th>
+     <th>Вопрос</th>
+      {% for question in latest_question_list %}
+        <tr>
+          <td>{{ question.id }}</td>
+          <td>{{ question.pub_date }}</td>
+          <td><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></td>
+        </tr>
+      {% endfor %}
+    </table>
 {% else %}
     <p>Нет доступный вопросов.</p>
 {% endif %}
