@@ -9,20 +9,39 @@ body {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
+    margin: auto; 
+
 }
 
-th, td {
+th {
     text-align: left;
     padding: 8px;
     border-bottom: 1px solid #ddd;
+ /*	border-spacing: 5px;
+    border-radius: 10px;*/
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #abddfe}
+tr:nth-child(odd){background-color: #ddffff}
 
 th {
     background-color: #4CAF50;
     color: white;
 }
 
-tr:hover{background-color:#f5f5f5}
+tr:hover{background-color:#ffffc6}
+
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd; /* Линия слева от ячейки */
+}
+.even { /* Стиль для четных колонок */
+    background: #dcdcdc;  /* Цвет фона */
+} 
+.lc { /* Стиль для первой колонки */
+text-align: left; /* Выравнивание по левому краю */
+border: none; /* Нет лишних линий */
+}
